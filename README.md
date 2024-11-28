@@ -24,5 +24,5 @@ How to fork this repository:
      OR
    - Simply copy them straight into the data folder in CLion
   
-7) On your CMakeLists.txt file, change the name that is inside the set_target_properties from Project3 to whatever you chose to name your repository earlier.
+7) On your CMakeLists.txt file, change the name that is inside the set_target_properties from Project3 to whatever you chose to name your repository earlier. (If you are on CLion, it should just do this for you automatically)
 8) Now this project is ready for all kinds of fun testing!!
