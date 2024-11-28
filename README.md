@@ -6,4 +6,4 @@ For more information on the data files used, please refer to the README.md locat
 How to fork this repository:
 1) Download both the train.csv and test.csv files that are the data files used for this Project. These are to be placed in the folder titled "data".
 2) Download this folder that will write the result of the sorting algorithms to the empty csv files.
-3) Clone this repository, don't forget to add the results folder and the csv files into the data folder!
+3) Clone this repository, don't forget to add the results folder in the Project3 cloned repository and the csv files into the data folder!
