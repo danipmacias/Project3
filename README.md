@@ -10,7 +10,17 @@ How to fork this repository:
 4) Sign up for the website if it prompts you to (Make sure to uncheck the box that asks if you want email from this website).
 
 5) Now, clone this repository.
-   - If you are using CLion (which is what we used) make sure to 
-7) Once you are able to open the zip file from your downloads folder,  These are to be placed in the folder titled "data".
-2) Download this folder that will write the result of the sorting algorithms to the empty csv files.
-3) Clone this repository, don't forget to add the results folder in the Project3 cloned repository and the csv files into the data folder!
+   - If you are using CLion (which is what we used)
+     1) On GitHub, click "Use this template" on the upper right hand corner.
+     2) Click "Create a new repository".
+     3) Name it whatever you want (but nothing crazy!), click private or public (up to you!), and finally "Create Repository".
+     4) Now on your own Cloned Repository, click on the green "Code" button. Copy the URL that you see there.
+     5) Now open CLion and click "Get from VCS".
+     6) Paste the URL that you copied from Github.
+     7) Click "Clone" and "Ok".
+     8) Yay you made a clone! But you are not done muahahahah
+6) Now lets go back to the zip file from earlier. Open it, and copy the files titled "test.csv" and "train.csv" into the data folder.
+   - This can either be done in your Finder/File Explorer where you can simply copy and paste these files into the data folder of your newly created Project3 clone
+     OR
+   - Simply copy them straight into the data folder in CLion
+7) Now this project is ready for all kinds of fun testing!!
