@@ -23,4 +23,6 @@ How to fork this repository:
    - This can either be done in your Finder/File Explorer where you can simply copy and paste these files into the data folder of your newly created Project3 clone
      OR
    - Simply copy them straight into the data folder in CLion
-7) Now this project is ready for all kinds of fun testing!!
+  
+7) On your CMakeLists.txt file, change the name that is inside the set_target_properties from Project3 to whatever you chose to name your repository earlier.
+8) Now this project is ready for all kinds of fun testing!!
