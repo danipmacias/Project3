@@ -1,9 +1,0 @@
-# ninja log v6
-1	511	1732765393738869278	CMakeFiles/Project3.dir/src/quick_sort.cpp.o	19bfa94fc405c15b
-1	518	1732765393738753861	CMakeFiles/Project3.dir/src/merge_sort.cpp.o	fb2eaa9a3e91aae2
-0	666	1732765393738386112	CMakeFiles/Project3.dir/src/helper.cpp.o	7ba2801b4064deb8
-8	1128	1732765542472926839	CMakeFiles/Project3.dir/src/quick_sort.cpp.o	86754e7bc581ba00
-8	1191	1732765542472596382	CMakeFiles/Project3.dir/src/merge_sort.cpp.o	4ccaac23cd00294
-5	1273	1732765542470466594	CMakeFiles/Project3.dir/src/helper.cpp.o	5849a2388192a675
-7	1793	1732765542472410924	CMakeFiles/Project3.dir/src/main.cpp.o	192672884915c098
-1794	1931	1732765544258690139	Project3	1e3fa7782dd3bf95
