@@ -7,7 +7,8 @@
 
 #include <vector>
 #include "helper.h"
+#include <functional>
 
-void mergeSort(std::vector<Review> &review, int left , int right);
+void mergeSort(std::vector<Review> &review, int left , int right, const std::function<void(int)> &progressCallback, int totalSize);
 
 #endif //UNTITLED_MERGE_SORT_H

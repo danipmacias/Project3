@@ -4,22 +4,19 @@ project(Project3)
 set(CMAKE_CXX_STANDARD 20)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
-
-set(CMAKE_PREFIX_PATH "/usr/local/opt/qt")
-
-
+set(CMAKE_AUTOMOC ON)
 
 add_executable(Project3
-        src/helper.cpp
         src/main.cpp
+        src/sort_window.cpp
+        src/sort_window.h
+        src/helper.cpp
         src/helper.h
-        src/merge_sort.cpp
         src/quick_sort.cpp
         src/quick_sort.h
-        src/main.cpp)
-
-# Set the working directory to the root of the project
-set_target_properties(Project3 PROPERTIES
-        VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
+        src/merge_sort.cpp
+        src/merge_sort.h
+        src/sorting_helper.h
+)
 
 target_link_libraries(Project3 Qt6::Widgets)
