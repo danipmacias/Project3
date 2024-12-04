@@ -9,6 +9,7 @@
 #include "helper.h"
 #include <functional>
 
-void quickSort(std::vector<Review> &review, int low, int high, const std::function<void(int)> &progressCallback, int totalSize);
+void quickSort(std::vector<Review> &review, int low, int high, std::function<void(int)> progressCall, int totalSize);
 
 #endif //UNTITLED_QUICK_SORT_H
+//void quickSort(std::vector<Review> &review, int low, int high);

@@ -34,6 +34,7 @@ private:
 
 public slots:
     void startSorting(const QString& filename);
+
     void updateQuickSortProgress(int value);
 
     void updateMergeSortProgress(int value);

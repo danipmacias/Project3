@@ -5,6 +5,7 @@
 // #include <chrono>
 // #include <iostream>
 // #include <filesystem>
+// #include <functional>
 //
 // int main(){
 //     std::cout << "Current working directory: " << std::filesystem::current_path() << std::endl;
@@ -38,6 +39,7 @@
 //                   << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()
 //                   << "ms" << std::endl;
 //         saveTheSortedData(quickReview, "results/sorted_data_quick.csv");
+//         std::cout << "Quick Sort Saved!" << std::endl;
 //
 //         //merge sort implementation
 //         auto mergeReview = review;
@@ -48,6 +50,7 @@
 //                   << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()
 //                   << "ms" << std::endl;
 //         saveTheSortedData(mergeReview, "results/sorted_data_merge.csv");
+//         std::cout << "Merge Sort Saved!";
 //     }
 //     catch (const std::exception& e) {
 //         std::cerr << e.what() << std::endl;
@@ -58,16 +61,16 @@
 // }
 
 #include <QApplication>
-#include "main_window.h"
+#include "sort_window.h"
 
 
-// Changed main function to handle UI
-int main(int argc, char *argv[]) {
-    QApplication app(argc, argv);
+ // Changed main function to handle UI
+ int main(int argc, char *argv[]) {
+     QApplication app(argc, argv);
 
-    SortWindow sortWindow;
-    sortWindow.resize(400, 100);
-    sortWindow.show();
+     SortWindow sortWindow;
+     sortWindow.resize(400, 100);
+     sortWindow.show();
 
-    return app.exec();
-}
+     return app.exec();
+ }

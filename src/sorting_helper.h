@@ -26,29 +26,75 @@ signals:
     void finished();
 
 public slots:
-    void process() {
+    void quickProcess() {
         try {
             std::vector<Review> reviews = loadingDataset(filename.toStdString());
             if (reviews.empty()) {
                 emit quickSortTimeUpdated("Error: No data");
-                emit mergeSortTimeUpdated("Error: No data");
+                //emit mergeSortTimeUpdated("Error: No data");
                 emit finished();
                 return;
             }
 
-            int totalSize = static_cast<int>(reviews.size());
+            int totalSize = reviews.size();
 
             // Quick Sort
             auto quickReviews = reviews;
+            int progress = 0;
             emit quickSortProgressUpdated(0);
             auto quickStart = std::chrono::high_resolution_clock::now();
             // Will update progress bar as the program compiles
-            quickSort(quickReviews, 0, totalSize-1, [&](int progress){emit quickSortProgressUpdated(progress);}, totalSize);
+            quickSort(quickReviews, 0, totalSize - 1, [&](int progress) { emit quickSortProgressUpdated(progress); }, totalSize);
             auto quickEnd = std::chrono::high_resolution_clock::now();
             auto quickDuration = std::chrono::duration_cast<std::chrono::milliseconds>(quickEnd - quickStart).count();
             emit quickSortProgressUpdated(100);
             emit quickSortTimeUpdated(QString::number(quickDuration) + " ms");
             saveTheSortedData(quickReviews, "results/sorted_data_quick.csv");
+
+            // // Merge Sort
+            // auto mergeReviews = reviews;
+            // emit mergeSortProgressUpdated(0);
+            // auto mergeStart = std::chrono::high_resolution_clock::now();
+            // // Will update progress bar as the program compiles
+            // mergeSort(mergeReviews, 0, reviews.size() - 1, [&](int progress){emit mergeSortProgressUpdated(progress);}, totalSize);
+            //
+            // auto mergeEnd = std::chrono::high_resolution_clock::now();
+            // auto mergeDuration = std::chrono::duration_cast<std::chrono::milliseconds>(mergeEnd - mergeStart).count();
+            // emit mergeSortProgressUpdated(100);
+            // emit mergeSortTimeUpdated(QString::number(mergeDuration) + " ms");
+            // saveTheSortedData(mergeReviews, "results/sorted_data_merge.csv");
+
+        } catch (const std::exception &e) {
+            emit quickSortTimeUpdated(QString("Error").arg(e.what()));
+            //emit mergeSortTimeUpdated(QString("Error").arg(e.what()));
+        }
+
+        emit finished();
+    }
+    void mergeProcess() {
+        try {
+            std::vector<Review> reviews = loadingDataset(filename.toStdString());
+            if (reviews.empty()) {
+                //emit quickSortTimeUpdated("Error: No data");
+                emit mergeSortTimeUpdated("Error: No data");
+                emit finished();
+                return;
+            }
+
+            int totalSize = reviews.size();
+
+            // // Quick Sort
+            // auto quickReviews = reviews;
+            // int progress = 0;
+            // emit quickSortProgressUpdated(0);
+            // auto quickStart = std::chrono::high_resolution_clock::now();
+            // // Will update progress bar as the program compiles
+            // quickSort(quickReviews, 0, quickReviews.size() - 1, progress, totalSize);
+            // auto quickEnd = std::chrono::high_resolution_clock::now();
+            // auto quickDuration = std::chrono::duration_cast<std::chrono::milliseconds>(quickEnd - quickStart).count();
+            // emit quickSortProgressUpdated(100);
+            // emit quickSortTimeUpdated(QString::number(quickDuration) + " ms");
+            // saveTheSortedData(quickReviews, "results/sorted_data_quick.csv");
 
             // Merge Sort
             auto mergeReviews = reviews;
@@ -64,10 +110,9 @@ public slots:
             saveTheSortedData(mergeReviews, "results/sorted_data_merge.csv");
 
         } catch (const std::exception &e) {
-            emit quickSortTimeUpdated(QString("Error").arg(e.what()));
+            //emit quickSortTimeUpdated(QString("Error").arg(e.what()));
             emit mergeSortTimeUpdated(QString("Error").arg(e.what()));
         }
-
         emit finished();
     }
 

@@ -13,6 +13,12 @@ struct Review{
     int polarity;
     // body of the review
     std::string text;
+    bool operator>(const Review& rhs) const {
+        if (this->polarity > rhs.polarity) {
+            return this->text.length() > rhs.text.length();
+        }
+        return this->text.length() < rhs.text.length();
+    }
 };
 
 std::vector<Review> loadingDataset(const std::string &filename);
