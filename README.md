@@ -23,14 +23,14 @@ How to fork this repository:
    - This can either be done in your Finder/File Explorer where you can simply copy and paste these files into the data folder of your newly created Project3 clone
      OR
    - Simply copy them straight into the data folder in CLion
-  
 7) Now if you press on run and it is not running and exhibiting all kinds of errors due to missing QApplications, that means you need to install Qt for your computer.
 8) If you have a MacOS:
    - Go on your Terminal and type "brew install qt"
 9) If you have Windows:
-   - Go to https://www.qt.io/download-dev#eval-form
-   - Click Download for Windows
-   - Sign up with your school email
-   - Verify your account
-   - 
-) Now this project is ready for all kinds of fun testing!!
+   - Open start, type cmd, press ctrl + shift + enter, press the Windows key + x
+   - Select Command prompt(Admin), and then select Yes to run as administrator
+   - If you don't have Choclatey downloaded yet, I highly highly highly reccommed            downloading it because it will save you much grievance (I promise)
+   - https://chocolatey.org/install
+   - Now that you have your admin shell open follow the steps to download chocolatey as      an individual
+   - Once Chocolatey is downloaded, copy and paste "choco install qt --version=6"
+10) Now this project is ready for all kinds of fun testing!!
