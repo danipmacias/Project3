@@ -27,10 +27,10 @@ How to fork this repository:
 8) If you have a MacOS:
    - Go on your Terminal and type "brew install qt"
 9) If you have Windows:
-   - Download the Qt online installer from https://account.qt.io/s/downloads
+   - Download the Qt online installer from https://account.qt.io/s/downloads and scroll down to get a free educational license
    - You can get a free educational license with your student email once you verify it
    - Once you have the online installer downloaded for your system, click on it and it will open a new window
-   - Select your preferred Installation preferences
+   - Continue with your own preferences and select Qt for Developers instead of Custom
    - Once you get to the Select Components, on the select drop down menu click "Default"
    - Continue with your preferences and install the application
 10) Now this project is ready for all kinds of fun testing!!
