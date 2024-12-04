@@ -29,5 +29,8 @@ How to fork this repository:
 9) If you have Windows:
    - Download the Qt online installer from https://account.qt.io/s/downloads
    - You can get a free educational license with your student email once you verify it
-   - 
+   - Once you have the online installer downloaded for your system, click on it and it will open a new window
+   - Select your preferred Installation preferences
+   - Once you get to the Select Components, on the select drop down menu click "Default"
+   - Continue with your preferences and install the application
 10) Now this project is ready for all kinds of fun testing!!
