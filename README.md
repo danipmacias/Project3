@@ -24,5 +24,13 @@ How to fork this repository:
      OR
    - Simply copy them straight into the data folder in CLion
   
-7) On your CMakeLists.txt file, change the name that is inside the set_target_properties from Project3 to whatever you chose to name your repository earlier. (If you are on CLion, it should just do this for you automatically)
-8) Now this project is ready for all kinds of fun testing!!
+7) Now if you press on run and it is not running and exhibiting all kinds of errors due to missing QApplications, that means you need to install Qt for your computer.
+8) If you have a MacOS:
+   - Go on your Terminal and type "brew install qt"
+9) If you have Windows:
+   - Go to https://www.qt.io/download-dev#eval-form
+   - Click Download for Windows
+   - Sign up with your school email
+   - Verify your account
+   - 
+) Now this project is ready for all kinds of fun testing!!
