@@ -27,10 +27,7 @@ How to fork this repository:
 8) If you have a MacOS:
    - Go on your Terminal and type "brew install qt"
 9) If you have Windows:
-   - Open start, type cmd, press ctrl + shift + enter, press the Windows key + x
-   - Select Command prompt(Admin), and then select Yes to run as administrator
-   - If you don't have Choclatey downloaded yet, I highly highly highly reccommed            downloading it because it will save you much grievance (I promise)
-   - https://chocolatey.org/install
-   - Now that you have your admin shell open follow the steps to download chocolatey as      an individual
-   - Once Chocolatey is downloaded, copy and paste "choco install qt --version=6"
+   - Download the Qt online installer from https://account.qt.io/s/downloads
+   - You can get a free educational license with your student email once you verify it
+   - 
 10) Now this project is ready for all kinds of fun testing!!
