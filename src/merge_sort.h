@@ -11,4 +11,7 @@
 
 void mergeSort(std::vector<Review> &review, int left , int right, const std::function<void(int)> &progressCallback, int totalSize);
 
+//void mergeSort(std::vector<Review> &review, int left , int right);
+
+
 #endif //UNTITLED_MERGE_SORT_H

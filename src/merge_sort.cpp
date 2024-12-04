@@ -25,11 +25,11 @@ void merge(std::vector<Review> &review, int left, int mid, int right){
 }
 
 // Adding "function" so the progress bar dynamically updates its progress as the program is running
-void mergeSort(std::vector<Review> &review, int left, int right, const std::function<void(int)> &progressCallback, int totalSize){
+ void mergeSort(std::vector<Review> &review, int left, int right, const std::function<void(int)> &progressCallback, int totalSize){
     if( left < right) {
         // Percentage of progress that will be reported back to progress bar
         int progress = right * 100 / totalSize;
-        if (progress % 10 == 0) {
+        if (progress % 10 == 5) {
             progressCallback(progress);
         }
 
@@ -41,3 +41,14 @@ void mergeSort(std::vector<Review> &review, int left, int right, const std::func
 
     }
 }
+
+// void mergeSort(std::vector<Review> &review, int left, int right){
+//     if( left < right) {
+//         int mid = left + (right - left) / 2;
+//
+//         mergeSort(review, left, mid);
+//         mergeSort(review, mid + 1, right);
+//         merge(review, left, mid, right);
+//
+//     }
+// }

@@ -53,7 +53,7 @@ void saveTheSortedData(const std::vector<Review> &review, const std::string &fil
 bool compare(const Review &a, const Review &b){
     if(a.polarity == b.polarity){
         //sort by polarity length if they are equal
-        return a.text.length() < b.text.length();
+        return a.text < b.text;
     }
     //sort by polarity
     return a.polarity < b.polarity;

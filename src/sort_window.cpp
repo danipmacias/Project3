@@ -14,6 +14,7 @@
 SortWindow::SortWindow(QWidget *parent) : QWidget(parent) {
     setWindowTitle("Sorting Application");
 
+    //int progress = 0;
     // Adding buttons
     testButton = new QPushButton("Sort test.csv", this);
     trainButton = new QPushButton("Sort train.csv", this);
@@ -54,30 +55,20 @@ SortWindow::SortWindow(QWidget *parent) : QWidget(parent) {
 
 void SortWindow::startSorting(const QString &filename) {
     // Create a worker and a thread
-    QThread *workerThread = new QThread(this);
-    SortingHelper *worker = new SortingHelper(filename);
-    worker->moveToThread(workerThread);
+    SortingHelper quickWorker(filename);
 
-    // Connect signals for Quick Sort
-    connect(worker, &SortingHelper::quickSortProgressUpdated, this, &SortWindow::updateQuickSortProgress);
-    connect(worker, &SortingHelper::quickSortTimeUpdated, this, &SortWindow::updateQuickSortTime);
+    connect(&quickWorker, &SortingHelper::quickSortProgressUpdated, this, &SortWindow::updateQuickSortProgress);
+    connect(&quickWorker, &SortingHelper::quickSortTimeUpdated, this, &SortWindow::updateQuickSortTime);
 
-    // Connect signals for Merge Sort
-    connect(worker, &SortingHelper::mergeSortProgressUpdated, this, &SortWindow::updateMergeSortProgress);
-    connect(worker, &SortingHelper::mergeSortTimeUpdated, this, &SortWindow::updateMergeSortTime);
+    quickWorker.quickProcess();
 
-    //connect(worker, &SortingHelper::finished, this, &SortWindow::close);
+    SortingHelper mergeWorker(filename);
+    connect(&mergeWorker, &SortingHelper::mergeSortProgressUpdated, this, &SortWindow::updateMergeSortProgress);
+    connect(&mergeWorker, &SortingHelper::mergeSortTimeUpdated, this, &SortWindow::updateMergeSortTime);
 
-    // Connect worker and thread lifecycle
-    connect(workerThread, &QThread::started, worker, &SortingHelper::process);
-    connect(worker, &SortingHelper::process, workerThread, &QThread::quit);
-    connect(worker, &SortingHelper::process, worker, &SortingHelper::deleteLater);
-    connect(workerThread, &QThread::finished, workerThread, &QThread::deleteLater);
+    mergeWorker.mergeProcess();
 
-    // Start the thread
-    workerThread->start();
 }
-
 void SortWindow::updateQuickSortProgress(int value) {
     quickSortProgressBar->setValue(value);
 }
@@ -104,7 +95,7 @@ void SortWindow::openSortWindowForTest() {
 void SortWindow::openSortWindowForTrain() {
     updateMergeSortProgress(0);
     updateQuickSortProgress(0);
-    updateQuickSortTime("Time: 0 ms");
-    updateMergeSortTime("Time: 0 ms");
+    updateQuickSortTime("0 ms");
+    updateMergeSortTime("0 ms");
     startSorting("data/train.csv");
 }
